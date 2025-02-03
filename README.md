@@ -76,5 +76,5 @@ response = rf.f_r(
 ## 🔗 相关链接
 
 - [PyPI 项目页面](https://pypi.org/project/llmrf/)
-- [问题反馈](https://github.com/yourusername/llmrf/issues)
+- [问题反馈](https://github.com/cchking/llmrf/issues)
 - [更新日志](CHANGELOG.md)
