@@ -1,5 +1,3 @@
-让我为这个项目写一个 GitHub 仓库的介绍内容：
-
 # LLMRF
 [![PyPI version](https://badge.fury.io/py/llmrf.svg)](https://badge.fury.io/py/llmrf)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
