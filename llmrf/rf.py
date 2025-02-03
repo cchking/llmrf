@@ -51,7 +51,4 @@ class RF:
             }],
             "usage": None
         }
-        return [
-            f"data: {json.dumps(chunk, ensure_ascii=False)}\n\n",
-            "data: [DONE]\n\n"
-        ]
+        return f"data: {json.dumps(chunk, ensure_ascii=False)}\n\n"
