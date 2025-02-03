@@ -1,101 +1,82 @@
-好的，这是一个更详细的 `README.md`：
+让我为这个项目写一个 GitHub 仓库的介绍内容：
 
-````markdown
-# LLMRF (LLM Response Formatter)
+# LLMRF
+[![PyPI version](https://badge.fury.io/py/llmrf.svg)](https://badge.fury.io/py/llmrf)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/release/python-360/)
 
-一个简单的 LLM 响应格式化工具，可以将文本内容格式化为类似 OpenAI API 的响应格式。
+LLMRF (LLM Response Formatter) 是一个轻量级的 Python 库，用于将 LLM 输出格式化为标准的 OpenAI API 响应格式。
 
-## 功能特点
+## ✨ 特性
 
-- 支持普通响应和流式响应格式
-- 类 OpenAI API 的响应结构
-- 简单易用的接口
-- 支持自定义模型名称和其他参数
+- 🚀 简单易用的 API
+- 📦 支持标准和流式响应格式
+- 🔧 完全可自定义的参数
+- 🎯 兼容 OpenAI API 格式
 
-## 安装
+## 🛠️ 安装
 
 ```bash
 pip install llmrf
 ```
-````
 
-## 基础使用
+## 📖 使用示例
+
+### 基础用法
 
 ```python
 from llmrf import RF
 
-# 创建格式化器实例
 rf = RF()
 
 # 普通响应
-response = rf.f_r("你好世界")
-# 返回格式示例：
-{
-    "id": "chatcmpl-xxx",
-    "object": "chat.completion",
-    "created": 1709544000,
-    "model": "gpt-3.5-turbo",
-    "choices": [{
-        "index": 0,
-        "message": {
-            "role": "assistant",
-            "content": "你好世界"
-        },
-        "finish_reason": "stop"
-    }],
-    "usage": {
-        "prompt_tokens": 3,
-        "completion_tokens": 3,
-        "total_tokens": 6
-    }
-}
+response = rf.f_r("Hello, World!")
 
 # 流式响应
-stream = rf.f_r("你好世界", stream=True)
-# 返回格式示例：
-data: {"id": null, "object": "chat.completion.chunk", ...}
-data: [DONE]
+stream = rf.f_r("Hello, World!", stream=True)
 ```
 
-## 高级用法
-
-可以自定义模型名称和其他参数：
+### 自定义参数
 
 ```python
 response = rf.f_r(
-    content="你好世界",
-    stream=False,
+    content="Hello, World!",
     model="custom-model",
     id="custom-id"
 )
 ```
 
-## 参数说明
+## 📚 API 文档
 
-`rf.f_r()` 方法支持以下参数：
+### RF.f_r()
 
-- `content`: (必需) 要格式化的文本内容
-- `stream`: (可选) 布尔值，是否使用流式响应格式，默认 False
-- `model`: (可选) 模型名称，默认 "gpt-3.5-turbo"
-- `id`: (可选) 响应 ID，默认自动生成
-- `created`: (可选) 创建时间戳，默认当前时间
+主要格式化方法，支持以下参数：
 
-## 开源协议
+| 参数 | 类型 | 必需 | 默认值 | 描述 |
+|------|------|------|--------|------|
+| content | str | 是 | - | 要格式化的文本内容 |
+| stream | bool | 否 | False | 是否使用流式响应 |
+| model | str | 否 | "gpt-3.5-turbo" | 模型名称 |
+| id | str | 否 | 自动生成 | 响应 ID |
+| created | int | 否 | 当前时间戳 | 创建时间 |
 
-MIT License
+## 🎯 使用场景
 
-## 问题反馈
+- 自定义 LLM 服务接口标准化
+- API 响应格式转换
+- 流式输出格式化
+- LLM 响应模拟测试
 
-如果您发现任何问题或有改进建议，欢迎在 GitHub 上提交 issue。
+## 🤝 贡献
 
-```
+欢迎提交 Pull Requests！对于重大更改，请先开 issue 讨论您想要改变的内容。
 
-这个版本的 README：
-1. 增加了功能特点说明
-2. 添加了更详细的使用示例
-3. 包含了完整的参数说明
-4. 添加了响应格式示例
-5. 说明了开源协议和问题反馈方式
+## 📄 开源协议
 
-需要补充或修改什么吗？
-```
+[MIT](LICENSE)
+
+## 🔗 相关链接
+
+- [PyPI 项目页面](https://pypi.org/project/llmrf/)
+- [问题反馈](https://github.com/yourusername/llmrf/issues)
+- [更新日志](CHANGELOG.md)
