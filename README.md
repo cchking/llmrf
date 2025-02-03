@@ -69,9 +69,6 @@ response = rf.f_r(
 
 欢迎提交 Pull Requests！对于重大更改，请先开 issue 讨论您想要改变的内容。
 
-## 📄 开源协议
-
-[MIT](LICENSE)
 
 ## 🔗 相关链接
 
